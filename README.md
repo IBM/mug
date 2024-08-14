@@ -1,6 +1,6 @@
 # Model of Urban Growth
 
-![](https://github.com/IBM/mug/blob/f2e701dcd4bddc056ed4287c59df6f02b79c0cec/assets/ug.gif)
+![](https://github.com/IBM/mug/blob/867ab0498df9dd85be74ef8acad9c264478f8f78/assets/ug.gif)
 
 
 This repository contains code to mount a dataset which connects demographic and geospatial data using **torchgeo** and a deep learning model with sequence-to-sequence convLSTM architecture with training, validation and testing for urban settlements prediction. The model training used a time series from **Worldpop.org** between 2000 and 2004 and the test carried out used datafrom the year 2015.
@@ -85,29 +85,29 @@ $ cd mug
 ### File Structure
 
 
-src/mug/            
+**src/mug/**            
 
-├── cli/                    - utilities regarding an alternative code to load data and model 
+├─**─ c**li/                    - utilities regarding an alternative code to load data and model 
 
-├── dataset/                - dataset management (download, processing, generation )
+├─**─ datas**et/                - dataset management (download, processing, generation )
 
-├── nn/                     - model architecture
+├─**─ **nn/                     - model architecture
 
-└── samplers/                - sample generation
+└─**─ sample**rs/                - sample generation
 
-└── utils/                   - utilities regarding evaluation
+└─**─ uti**ls/                   - utilities regarding evaluation
 
-rois.txt                    - config file with region of interest using latitude and longitude of each city      
+**rois.txt**                    - config file with region of interest using latitude and longitude of each city      
 
-parameteres_variable.yaml   - parameter file with hyperparameters
+**parameteres_variable.yaml**   - parameter file with hyperparameters
 
-script_mug_s2s.py           - main script to load the data, train, 
+**script_mug_s2s.py**           - main script to load the data, train, 
 valid and test the sequence-to-sequence convLSTM model 
 
-trainjupyter_s2s_main.ipynb - main notebook code to load the data, 
+**trainjupyter_s2s_main.ipynb** - main notebook code to load the data, 
 train, valid and test the sequence-to-sequence convLSTM model 
 
 
 ## Result (test images)
 
-![](https://github.com/IBM/mug/blob/f2e701dcd4bddc056ed4287c59df6f02b79c0cec/assets/result_graphic.png)
+![](https://github.com/IBM/mug/blob/867ab0498df9dd85be74ef8acad9c264478f8f78/assets/result_graphic.png)
