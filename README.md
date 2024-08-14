@@ -3,46 +3,25 @@
 ![](https://github.com/IBM/mug/blob/867ab0498df9dd85be74ef8acad9c264478f8f78/assets/ug.gif)
 
 
-This repository contains code to mount a dataset which connects demographic and geospatial data using **torchgeo** and a deep learning model with sequence-to-sequence convLSTM architecture with training, validation and testing for urban settlements prediction. The model training used a time series from **Worldpop.org** between 2000 and 2004 and the test carried out used datafrom the year 2015.
+This repository contains code to mount a dataset which connects demographic and geospatial data using [`torchgeo`](https://github.com/microsoft/torchgeo) and a deep learning model with sequence-to-sequence convLSTM architecture with training, validation and testing for urban settlements prediction. The model training used a time series from [Worldpop.org](https://www.worldpop.org/) between 2000 and 2004 and the test carried out used datafrom the year 2015.
 
 
 ## Download data
 
-The data can be downloaded into a new directory **/worldpop/** . For this test, we are using Land cover, water, roads and slope information. The connection between different datasets will performed by the code at src/mug/dataset/* using Torchgeo.
+The data can be downloaded into a new directory `**/worldpop/**` . For this test, we are using land cover, water, roads and slope information. The connection between different datasets will performed by the code in [`src/mug/dataset/*`](https://github.com/IBM/mug/blob/main/src/mug/datasets) using Torchgeo.
 
+* [Age & Sex structures](https://hub.worldpop.org/project/categories?id=8)
+* [Elevation](https://hub.worldpop.org/geodata/listing?id=58)
+* [Population](https://hub.worldpop.org/project/categories?id=3)
+* [LandCover](https://hub.worldpop.org/geodata/listing?id=60)
 
-[] [Age & Sex structures](https://hub.worldpop.org/project/categories?id=8)
+These data files are downloaded using FTP:
 
-[] [Elevation](https://hub.worldpop.org/geodata/listing?id=58)
+* Slope: ftp://ftp.worldpop.org.uk/GIS/Covariates/Global_2000_2020/0_Mosaicked/Slope/slope100m.tif
+* Water: ftp://ftp.worldpop.org.uk/GIS/Covariates/Global_2000_2020/0_Mosaicked/OSM_Water/BinaryMosaic_1_0_NoData/osmwater100m_1_0_NoData.tif
+* Roads: ftp://ftp.worldpop.org.uk/GIS/Covariates/Global_2000_2020/0_Mosaicked/OSM_Roads/BinaryMosaic_1_0_NoData/osmhighway100m8-1710nd.tif
 
-[] [Population](https://hub.worldpop.org/project/categories?id=3)
-
-[] [LandCover](https://hub.worldpop.org/geodata/listing?id=60)
-
-[] [Slope] (ftp://ftp.worldpop.org.uk/GIS/Covariates/Global_2000_2020/0_Mosaicked/Slope/slope100m.tif)
-
-FTP protocol:  
-
-ftp://ftp.worldpop.org.uk/GIS/Covariates/Global_2000_2020/0_Mosaicked/Slope/slope100m.tif
-
-
-[] [Water] (ftp://ftp.worldpop.org.uk/GIS/Covariates/Global_2000_2020/0_Mosaicked/OSM_Water/BinaryMosaic_1_0_NoData/osmwater100m_1_0_NoData.tif)
-
-FTP protocol: 
-
-ftp://ftp.worldpop.org.uk/GIS/Covariates/Global_2000_2020/0_Mosaicked/OSM_Water/BinaryMosaic_1_0_NoData/osmwater100m_1_0_NoData.tif
-
-[] [Roads] (ftp://ftp.worldpop.org.uk/GIS/Covariates/Global_2000_2020/0_Mosaicked/OSM_Roads/BinaryMosaic_1_0_NoData/osmhighway100m8-1710nd.tif
-)
-
-FTP protocol:
-
-ftp://ftp.worldpop.org.uk/GIS/Covariates/Global_2000_2020/0_Mosaicked/OSM_Roads/BinaryMosaic_1_0_NoData/osmhighway100m8-1710nd.tif
-
-
-
-More details you can find at /src/mug/worldpop.py
-
+More details can be found in [`src/mug/datasets/worldpop.py`](https://github.com/IBM/mug/blob/main/src/mug/datasets/worldpop.py).
 
 
 ## Installation
@@ -88,29 +67,20 @@ $ cd mug
 
 ### File Structure
 
+```
+src/mug/            
 
-**src/mug/**            
+├─ cli/                     - utilities regarding an alternative code to load data and model 
+├─ dataset/                 - dataset management (download, processing, generation )
+├── nn/                     - model architecture
+├─ samples/                 - sample generation
+└─ utils/                   - utilities regarding evaluation
 
-├─ **cli/**                    - utilities regarding an alternative code to load data and model 
-
-├─ **dataset/**                - dataset management (download, processing, generation )
-
-├── **nn/**                    - model architecture
-
-└─ **samples/**	             sample generation
-
-└─ **utils/**                   - utilities regarding evaluation
-
-**rois.txt**                    - config file with region of interest using latitude and longitude of each city      
-
-**parameteres_variable.yaml**   - parameter file with hyperparameters
-
-**script_mug_s2s.py**           - main script to load the data, train, 
-valid and test the sequence-to-sequence convLSTM model 
-
-**trainjupyter_s2s_main.ipynb** - main notebook code to load the data, 
-train, valid and test the sequence-to-sequence convLSTM model 
-
+rois.txt                    - config file with region of interest using latitude and longitude of each city      
+parameteres_variable.yaml   - parameter file with hyperparameters
+script_mug_s2s.py           - main script to load the data, train, valid and test the sequence-to-sequence convLSTM model 
+trainjupyter_s2s_main.ipynb - main notebook code to load the data, train, valid and test the sequence-to-sequence convLSTM model 
+```
 
 ## Result (test images)
 
