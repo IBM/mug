@@ -33,35 +33,46 @@ $ export MUG_HOME='./mug'
 ```
 ### Creating the virtual environment
 
-First, you will need to install Python, version 3.12.2.
+First, you will need to install Python, version 3.12.2. The following instructions assume you are already in the `mug` repo root directory.
 
 1. Create the env: `python3 -m venv venv`
 2. Activate the env: `source ./venv/bin/activate`
-3. Install all packages: `(venv)$ pip install -r ${MUG_HOME}/requirements.txt`
-4. Install `mug` in editable mode:`(venv)$ pip install -e ${MUG_HOME}`
+3. Install all packages: `pip install -r ./requirements.txt`
+4. Install `mug` in editable mode:`pip install -e .`
 
+Here are the commands as one script:
+
+```shell
+python3 -m venv venv
+source ./venv/bin/activate
+pip install -r ./requirements.txt
+pip install -e .
+```
 
 ## Usage
 
 There are two ways of run the code: by notebook or by script
 
 ### Notebook
-You will have to activate the virtual environment everytime you need to use `mug`. 
+
+> [!NOTE]
+> You will have to activate the virtual environment everytime you need to use `mug`. 
 
 For instance, if you want to work with `mug` on `jupyter`, you will need to run the following commands in a freshly started shell:
 ```shell
-$ source ./venv/bin/activate
-$ cd mug
-(venv)$ jupyter-notebook trainjupyter_s2s_main.ipynb
+source ./venv/bin/activate
+jupyter-notebook trainjupyter_s2s_main.ipynb
 ```
 
 ### Python script
 
-You will have to activate the virtual environment everytime you need to use `mug`. For instance, if you want to work with `mug` using a Python script file you will need to run the following commands in a freshly started shell:
+> [!NOTE]
+> You will have to activate the virtual environment everytime you need to use `mug`. 
+
+For instance, if you want to work with `mug` using a Python script file you will need to run the following commands in a freshly started shell:
 ```shell
-$ source ./venv/bin/activate
-$ cd mug
-(venv)$ python script_mug_s2s.py --parameter_file='parameters_variable.yaml'
+source ./venv/bin/activate
+python script_mug_s2s.py --parameter_file='parameters_variable.yaml'
 ```
 
 
@@ -69,19 +80,19 @@ $ cd mug
 
 ```
 src/mug/            
-
 ├─ cli/                     - utilities regarding an alternative code to load data and model 
 ├─ dataset/                 - dataset management (download, processing, generation )
 ├── nn/                     - model architecture
 ├─ samples/                 - sample generation
 └─ utils/                   - utilities regarding evaluation
 
-rois.txt                    - config file with region of interest using latitude and longitude of each city      
-parameteres_variable.yaml   - parameter file with hyperparameters
+requirements.txt            - Python library requirements
+rois.csv                    - config file with region of interest using latitude and longitude of each city      
+parameters_variable.yaml    - parameter file with hyperparameters
 script_mug_s2s.py           - main script to load the data, train, valid and test the sequence-to-sequence convLSTM model 
 trainjupyter_s2s_main.ipynb - main notebook code to load the data, train, valid and test the sequence-to-sequence convLSTM model 
 ```
 
-## Result (test images)
+## Results (test images)
 
 ![](https://github.com/IBM/mug/blob/867ab0498df9dd85be74ef8acad9c264478f8f78/assets/result_graphic.png)
