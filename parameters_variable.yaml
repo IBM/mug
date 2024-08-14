@@ -1,0 +1,32 @@
+
+SIZE : 120
+START_YEAR : 2000  # start year
+SEQUENCE : 5  # number of time steps to train on (plus one as target)
+ROI_FILE : "rois.csv"  # this file should be in the root of the project
+ROI_COUNTRIES : []  # list of country codes to sample from, all if empty
+TRAINING_SAMPLES : 512  # total number of training samples
+ROI_SAMPLES : 32  # number of samples per ROI (only valid if random)
+SEED : 5040
+
+# DATA
+DATA_DIR : "../../../worldpop/" #Download the worldpop and ESA data , vide README to access the link
+
+# COMPUTE RELATED
+
+ACCELERATOR : "gpu"
+PRECISION : 16
+NUM_WORKERS : 1
+
+# TRAINING HYPERPARAMETERS
+
+STRIDE : 115
+NUM_CLASSES : 4
+BATCH_SIZE : 32 
+NUM_EPOCHS : 75
+
+INPUT_CHANNELS : 5
+LEARNING_RATE : 1e-4
+TARGET_SEQUENCE : 1
+
+# SAVING MODELS 
+SAVING_DIR : "saved_models/tb_logs/"  
