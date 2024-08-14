@@ -8,6 +8,9 @@ This repository contains code to mount a dataset which connects demographic and 
 
 ## Download data
 
+The data can be downloaded into a new directory **/worldpop/** . For this test, we are using Land cover, water, roads and slope information. The connection between different datasets will performed by the code at src/mug/dataset/* using Torchgeo.
+
+
 [] [Age & Sex structures](https://hub.worldpop.org/project/categories?id=8)
 
 [] [Elevation](https://hub.worldpop.org/geodata/listing?id=58)
@@ -16,20 +19,21 @@ This repository contains code to mount a dataset which connects demographic and 
 
 [] [LandCover](https://hub.worldpop.org/geodata/listing?id=60)
 
-[] Slope 
+[] [Slope] (ftp://ftp.worldpop.org.uk/GIS/Covariates/Global_2000_2020/0_Mosaicked/Slope/slope100m.tif)
 
 FTP protocol:  
 
 ftp://ftp.worldpop.org.uk/GIS/Covariates/Global_2000_2020/0_Mosaicked/Slope/slope100m.tif
 
 
-[] Water
+[] [Water] (ftp://ftp.worldpop.org.uk/GIS/Covariates/Global_2000_2020/0_Mosaicked/OSM_Water/BinaryMosaic_1_0_NoData/osmwater100m_1_0_NoData.tif)
 
 FTP protocol: 
 
 ftp://ftp.worldpop.org.uk/GIS/Covariates/Global_2000_2020/0_Mosaicked/OSM_Water/BinaryMosaic_1_0_NoData/osmwater100m_1_0_NoData.tif
 
-[] Roads
+[] [Roads] (ftp://ftp.worldpop.org.uk/GIS/Covariates/Global_2000_2020/0_Mosaicked/OSM_Roads/BinaryMosaic_1_0_NoData/osmhighway100m8-1710nd.tif
+)
 
 FTP protocol:
 
@@ -55,7 +59,7 @@ First, you will need to install Python, version 3.12.2.
 1. Create the env: `python3 -m venv venv`
 2. Activate the env: `source ./venv/bin/activate`
 3. Install all packages: `(venv)$ pip install -r ${MUG_HOME}/requirements.txt`
-4. Install `mug` in editable mode.:`(venv)$ pip install -e ${MUG_HOME}`
+4. Install `mug` in editable mode:`(venv)$ pip install -e ${MUG_HOME}`
 
 
 ## Usage
@@ -87,15 +91,15 @@ $ cd mug
 
 **src/mug/**            
 
-├─**─ c**li/                    - utilities regarding an alternative code to load data and model 
+├─ **cli/**                    - utilities regarding an alternative code to load data and model 
 
-├─**─ datas**et/                - dataset management (download, processing, generation )
+├─ **dataset/**                - dataset management (download, processing, generation )
 
-├─**─ **nn/                     - model architecture
+├── **nn/**                    - model architecture
 
-└─**─ sample**rs/                - sample generation
+└─ **samples/**	             sample generation
 
-└─**─ uti**ls/                   - utilities regarding evaluation
+└─ **utils/**                   - utilities regarding evaluation
 
 **rois.txt**                    - config file with region of interest using latitude and longitude of each city      
 
