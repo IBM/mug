@@ -3,7 +3,7 @@
 ![](https://github.com/IBM/mug/blob/867ab0498df9dd85be74ef8acad9c264478f8f78/assets/ug.gif)
 
 
-This repository contains code to mount a dataset which connects demographic and geospatial data using [`torchgeo`](https://github.com/microsoft/torchgeo) and a deep learning model with sequence-to-sequence convLSTM architecture with training, validation and testing for urban settlements prediction. The model training used a time series from [Worldpop.org](https://www.worldpop.org/) between 2000 and 2004 and the test carried out used datafrom the year 2015.
+This repository contains code to mount a dataset which connects demographic and geospatial data using [`torchgeo`](https://github.com/microsoft/torchgeo) and a deep learning model with sequence-to-sequence convLSTM architecture with training, validation and testing for urban settlements prediction. The model training used a time series from [Worldpop.org](https://www.worldpop.org/) between 2000 and 2004 and the test carried out used datafrom the year 2005.
 
 
 ## Download data
