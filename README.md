@@ -95,4 +95,4 @@ trainjupyter_s2s_main.ipynb - main notebook code to load the data, train, valid 
 
 ## Results (test images)
 
-![](https://github.com/IBM/mug/blob/867ab0498df9dd85be74ef8acad9c264478f8f78/assets/result_graphic.png)
+![](https://github.com/IBM/mug/blob/9dbae9c86e29799dacedb62fda38feee016ad661/assets/result_graphic.png)
