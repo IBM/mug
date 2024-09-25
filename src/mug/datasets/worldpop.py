@@ -68,6 +68,8 @@ LC_FLOODED = 160
 LC_URBAN = 190
 LC_BARE = 200
 
+MAXIMUM_YEAR_DATASET = 2005
+
 class _StaticDataset(RasterDataset):
     def __init__(
         self,
@@ -178,7 +180,7 @@ class _DynamicDataset(SpatiotemporalRasterDataset):
         # Check if the extracted files already exist
         pathname = os.path.join(self.root, "**", self.filename_glob)
         filelist = [fname for fname in glob.iglob(pathname, recursive=True)]
-        if len(filelist) > max(self.yearlist) - min(self.yearlist):
+        if len(filelist) > MAXIMUM_YEAR_DATASET - min(self.yearlist):
             return
         
         # Check if the user requested to download the dataset

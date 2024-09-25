@@ -22,7 +22,8 @@ def predict(ctx):
     """Model inferencing."""
     print(ctx.obj)
 
-models = importlib.import_module(".models", package="mug")
+#models = importlib.import_module(".models", package="mug")
+models = importlib.import_module(".nn", package="mug")
 for m in inspect.getmembers(models):
     if inspect.ismodule(m[1]):
         try:

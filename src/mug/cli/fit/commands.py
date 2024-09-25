@@ -45,7 +45,8 @@ def fit(
     ctx.obj['VALIDATION_SAMPLES'] = validation_samples
 
 
-models = importlib.import_module(".models", package="mug")
+#models = importlib.import_module(".models", package="mug")
+models = importlib.import_module(".nn", package="mug")
 for m in inspect.getmembers(models):
     if inspect.ismodule(m[1]):
         try:
