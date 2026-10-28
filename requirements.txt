@@ -8,7 +8,7 @@ jupyter_core==5.3.1
 jupyterlab==4.0.12
 jupyterlab_pygments==0.3.0
 nbclient==0.9.0
-nbconvert==7.14.2
+nbconvert==7.17.2
 nbformat==5.9.2
 notebook==7.0.7
 notebook_shim==0.2.3
